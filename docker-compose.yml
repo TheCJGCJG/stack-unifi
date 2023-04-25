@@ -23,5 +23,12 @@ services:
       - 127.0.0.1:27117:27117
     restart: unless-stopped
 
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    restart: always
+    command: tunnel --no-autoupdate run --protocol http2 --token eyJhIjoiZTQ1ZThhZDkzNDgwNzI0NjI2YzM0YTZkMzc4MWMyOWYiLCJ0IjoiYjhkNDkzN2QtMDg4MS00MzY3LTk2NzQtNjA3MGUzMzI0MGM0IiwicyI6Ik1qWmtabVkzWWpjdFpUQTVNaTAwTlRBd0xXSXhaVEF0TVRCbU5UVTRPVFZrTm1JeiJ9
+    links:
+        - unifi-controller
+
 volumes:
   unifi_config:
