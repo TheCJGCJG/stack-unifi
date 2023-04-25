@@ -24,4 +24,4 @@ services:
     restart: unless-stopped
 
 volumes:
-  unifi_config
+  unifi_config:
